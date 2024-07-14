@@ -19,8 +19,10 @@ def read_xml(file_path):
     return data
 
 def write_xml(data, file_path):
+    data = {"root": data}
     with open(file_path, 'w') as file:
         file.write(xmltodict.unparse(data, pretty=True))
+
 
 def read_yaml(file_path):
     with open(file_path, 'r') as file:

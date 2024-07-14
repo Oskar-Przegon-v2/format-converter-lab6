@@ -1,0 +1,3 @@
+([('project',
+   '/Users/oskar/Documents/GitHub/format-converter-lab6/dist/project',
+   'EXECUTABLE')],)
