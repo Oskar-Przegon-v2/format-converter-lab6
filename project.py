@@ -1,5 +1,6 @@
 import argparse
 import json
+import os
 
 def read_json(file_path):
     with open(file_path, 'r') as file:
@@ -15,6 +16,18 @@ def main():
     parser.add_argument('input_file', type=str, help='Input file path')
     parser.add_argument('output_file', type=str, help='Output file path')
     args = parser.parse_args()
+
+    if not os.path.exists(args.input_file):
+        print(f'Error: Input file {args.input_file} does not exist.')
+        return
+
+    if not args.input_file.endswith('.json'):
+        print(f'Error: Input file must be a .json file.')
+        return
+
+    if not args.output_file.endswith('.json'):
+        print(f'Error: Output file must be a .json file.')
+        return
 
     try:
         data = read_json(args.input_file)
